@@ -42,95 +42,12 @@ function remove_bloat($page)
 	$page = str_replace("http://rss.thepiratebay.se/", "/rss.php?id=", $page);
 	$page = str_replace("//rss.194.71.107.81/", "//anonymous.rs/rss.php?id=", $page); //change this
 	
-	//Remove links that is not needed
-	$page = str_replace("var urlToShow", "var Nothing", $page);
-	$page = str_replace("setCookie(name, value)", "setCookieGone(name, value)", $page);
-	$page = str_replace("getCookie(name)", "getCookieGone(name)", $page);
+	//hide links that is not needed
 	
-	$page = str_replace('<a href="/login" title="Login">Login</a> |', '', $page);
-	$page = str_replace('<a href="/register" title="Register">Register</a> |', '', $page);
-	$page = str_replace('<a href="/language" title="Select language">Language / Select language</a> |', '', $page);
-	$page = str_replace('<a href="/about" title="About">About</a> |', '', $page);
-	$page = str_replace('<a href="/legal" title="Legal threats">Legal threats</a> |', '', $page);
-	$page = str_replace('<a href="/blog" title="Blog">Blog</a>
-			<br />', '', $page);
-	
-	$page = str_replace('<a href="/contact" title="Contact us">Contact us</a> |', '', $page);
-	$page = str_replace('<a href="/policy" title="Usage policy">Usage policy</a> |', '', $page);
-	$page = str_replace('<a href="/downloads" title="Downloads">Downloads</a> |', '', $page);
-	$page = str_replace('<a href="http://www.promobay.org/" title="Promo" target="_NEW">Promo</a> |', '', $page);
-	$page = str_replace('<a href="/doodles" title="Doodles">Doodles</a> |', '', $page);
-	$page = str_replace('<a href="/tags" title="Tag Cloud">Tag Cloud</a> |', '', $page);
-	$page = str_replace('<a href="http://suprbay.org/" title="Forum" target="_blank">Forum</a> |', '', $page);
-	$page = str_replace('<a href="http://piratebrowser.com/" title="PirateBrowser" target="_blank"><strong>PirateBrowser</strong></a>
-			<br />', '', $page);
-	
-	$page = str_replace('<a href="http://bayfiles.net" title="Bayfiles" target="_blank">Bayfiles</a> |', '', $page);
-	$page = str_replace('<a href="http://bayimg.com" title="BayImg" target="_blank">BayImg</a> |', '', $page);
-	$page = str_replace('<a href="http://pastebay.net" title="PasteBay" target="_blank">PasteBay</a> |', '', $page);
-	$page = str_replace('<!-- <a href="https://twitter.com/tpbdotorg" title="Twitter" target="_blank">Follow TPB on Twitter</a> | -->', '', $page);
-	$page = str_replace('<a href="https://www.facebook.com/ThePirateBayWarMachine" title="Facebook" target="_blank">Follow TPB on Facebook</a>
-			<br />', '', $page);
-	
-	$page = str_replace("<a href=\"http://bayporn.me\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://bayporn.net\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://bayporn.org\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://bayporn.com\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://bayporn.in\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://bayporn.info\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	
-	$page = str_replace("<a href=\"http://themusicbay.com\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://themusicbay.net\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://themusicbay.org\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://themusicbay.info\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	
-	$page = str_replace("<a href=\"http://torrindex.net\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://torrindex.org\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://torrindex.com\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://torrindex.info\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://torrindex.in\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	
-	$page = str_replace("<a href=\"http://sharereactor.com\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://sharereactor.net\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://sharereactor.org\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://sharereactor.info\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	
-	$page = str_replace("<a href=\"http://tvbay.net\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://tvbay.org\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://tvbay.com\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	
-	$page = str_replace("<a href=\"http://thebootlegbay.com\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://thebootlegbay.net\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://thebootlegbay.org\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://thebootlegbay.info\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	
-	$page = str_replace("<a href=\"http://thevideobay.com\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://thevideobay.net\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://thevideobay.org\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://thevideobay.info\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	
-	$page = str_replace("<a href=\"http://torrentfiles.in\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://torrentfiles.net\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://torrentfiles.org\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://torrentfiles.com\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	
-	$page = str_replace("<a href=\"http://scenerelease.com\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://scenerelease.net\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://scenerelease.org\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	
-	$page = str_replace("<a href=\"http://thetvbay.org\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://thetvbay.net\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://thetvbay.com\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	
-	$page = str_replace("<a href=\"http://suprbay.net\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://suprbay.org\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://suprbay.com\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	
-	$page = str_replace("<a href=\"http://superbay.net\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://superbay.org\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	$page = str_replace("<a href=\"http://superbay.com\" title=\"Proxy\" target=\"_blank\">Proxy</a> |", "", $page);
-	
-	//bitcoin-litecoin-rss adresses
+	//$page = str_replace('<p id="footer" style="color:#666; font-size:0.9em; ">', '<p id="footer" style="color:#666; font-size:0.9em; display: none;">', $page); //hide stats in the footer
+	$page = str_replace('<p>', '<p style="display: none;">', $page); //hide links in the footer
+
+	//hide bitcoin-litecoin-rss adresses
 	$page = str_replace('<br /><a href="http://bitcoin.org" target="_NEW">BitCoin</a>: <b><a href="bitcoin:1KeBs4HBQzkdHC2ou3gpyGHqcL7aKzwTve">1KeBs4HBQzkdHC2ou3gpyGHqcL7aKzwTve</a></b><br /><a href="http://litecoin.org" target="_NEW">LiteCoin</a>: <a href="litecoin:LiYp3Dg11N5BgV8qKW42ubSZXFmjDByjoV">LiYp3Dg11N5BgV8qKW42ubSZXFmjDByjoV</a><br /><br />', '', $page);
 	
 	//No rss footer
