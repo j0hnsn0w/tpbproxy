@@ -6,14 +6,14 @@ function remove_bloat($page)
 	$page = preg_replace("@<script[^>]*?>.*?</script>@si","",$page); //no scripts
 	$page = preg_replace('%<iframe.+?</iframe>%is', '', $page); //no iframes
 	
-	$page = str_replace('&nbsp;Anonymous Download', '', $page);
+	//$page = str_replace('&nbsp;Anonymous Download', '', $page);
 	
 	//fake ssl search bar
-	$page = str_replace('<input type="search" class="inputbox" title="Pirate Search" name="q" placeholder="Search here..." value="" /><input value="Pirate Search" type="submit" class="submitbutton" />', '<input type="search" title="Pirate Search" name="q" required placeholder="Search here..." value="" style="background-color:#ffffe0;" class="searchBox" /><input value="Pirate Search" type="submit" class="submitbutton" />', $page);
+	//$page = str_replace('<input type="search" class="inputbox" title="Pirate Search" name="q" placeholder="Search here..." value="" /><input value="Pirate Search" type="submit" class="submitbutton" />', '<input type="search" title="Pirate Search" name="q" required placeholder="Search here..." value="" style="background-color:#ffffe0;" class="searchBox" /><input value="Pirate Search" type="submit" class="submitbutton" />', $page);
 
 	//Designfix
-	$page = str_replace("Get this torrent", "DOWNLOAD TORRENT", $page);
-	$page = str_replace('<div style="clear:both;">(Problems with magnets links are fixed by upgrading your <a href="http://bitfalcon.tv" target="_blank">torrent client</a>!)</div>', '', $page);
+	//$page = str_replace("Get this torrent", "DOWNLOAD TORRENT", $page);
+	//$page = str_replace('<div style="clear:both;">(Problems with magnets links are fixed by upgrading your <a href="http://bitfalcon.tv" target="_blank">torrent client</a>!)</div>', '', $page);
 	
 	//SearchFix
 	$page = str_replace("/s/", "/search.php", $page);
@@ -40,33 +40,33 @@ function remove_bloat($page)
 	
 	//RSS Proxy fix
 	$page = str_replace("http://rss.thepiratebay.se/", "/rss.php?id=", $page);
-	$page = str_replace("//rss.194.71.107.81/", "//anonymous.rs/rss.php?id=", $page); //change this
+	$page = str_replace("//rss.194.71.107.164/", "//anonymous.rs/rss.php?id=", $page); //change this
 	
 	//hide links that is not needed
 	
 	//$page = str_replace('<p id="footer" style="color:#666; font-size:0.9em; ">', '<p id="footer" style="color:#666; font-size:0.9em; display: none;">', $page); //hide stats in the footer
-	$page = str_replace('<p>', '<p style="display: none;">', $page); //hide links in the footer
+	//$page = str_replace('<p>', '<p style="display: none;">', $page); //hide links in the footer
 
 	//hide bitcoin-litecoin-rss adresses
-	$page = str_replace('<br /><a href="http://bitcoin.org" target="_NEW">BitCoin</a>: <b><a href="bitcoin:1KeBs4HBQzkdHC2ou3gpyGHqcL7aKzwTve">1KeBs4HBQzkdHC2ou3gpyGHqcL7aKzwTve</a></b><br /><a href="http://litecoin.org" target="_NEW">LiteCoin</a>: <a href="litecoin:LiYp3Dg11N5BgV8qKW42ubSZXFmjDByjoV">LiYp3Dg11N5BgV8qKW42ubSZXFmjDByjoV</a><br /><br />', '', $page);
+	//$page = str_replace('<br /><a href="http://bitcoin.org" target="_NEW">BitCoin</a>: <b><a href="bitcoin:1KeBs4HBQzkdHC2ou3gpyGHqcL7aKzwTve">1KeBs4HBQzkdHC2ou3gpyGHqcL7aKzwTve</a></b><br /><a href="http://litecoin.org" target="_NEW">LiteCoin</a>: <a href="litecoin:LiYp3Dg11N5BgV8qKW42ubSZXFmjDByjoV">LiYp3Dg11N5BgV8qKW42ubSZXFmjDByjoV</a><br /><br />', '', $page);
 	
 	//No rss footer
-	$page = str_replace('<a href="/rss" class="rss" title="RSS"><img src="/static/img/rss_small.gif" alt="RSS" /></a>', '', $page);
-	$page = str_replace('<span title="You are using SSL"><img src="/static/img/icon-https.gif"/></span>', '', $page);
+	//$page = str_replace('<a href="/rss" class="rss" title="RSS"><img src="/static/img/rss_small.gif" alt="RSS" /></a>', '', $page);
+	//$page = str_replace('<span title="You are using SSL"><img src="/static/img/icon-https.gif"/></span>', '', $page);
 	
 	//dns prefetch
-	$page = str_replace('<link rel="dns-prefetch" href="//cdn1.adexprt.com/">', '<link rel="dns-prefetch" href="//thepiratebay.se/">', $page);
-	$page = str_replace('<link rel="dns-prefetch" href="//cdn2.adexprt.com/">', '<link rel="dns-prefetch" href="//anonymous.rs/">', $page);
-	$page = str_replace('<link rel="dns-prefetch" href="//cdn3.adexprt.com/">', '<link rel="dns-prefetch" href="//thepiratebay.se/">', $page);
-	$page = str_replace('<link rel="dns-prefetch" href="//cdn3.adexprts.com/">', '<link rel="dns-prefetch" href="//anonymous.rs/">', $page);
-	$page = str_replace('<link rel="dns-prefetch" href="//0427d7.se/">', '<link rel="dns-prefetch" href="//anonymous.rs/">', $page);
-	$page = str_replace('<link rel="dns-prefetch" href="//syndication.exoclick.com/">', '<link rel="dns-prefetch" href="//thepiratebay.se/">', $page);
-	$page = str_replace('<link rel="dns-prefetch" href="//main.exoclick.com/">', '<link rel="dns-prefetch" href="//anonymous.rs/">', $page);
-	$page = str_replace('<link rel="dns-prefetch" href="//cdn.bitfalcon.tv/">', '<link rel="dns-prefetch" href="//thepiratebay.se/">', $page);
+	//$page = str_replace('<link rel="dns-prefetch" href="//cdn1.adexprt.com/">', '<link rel="dns-prefetch" href="//thepiratebay.se/">', $page);
+	//$page = str_replace('<link rel="dns-prefetch" href="//cdn2.adexprt.com/">', '<link rel="dns-prefetch" href="//anonymous.rs/">', $page);
+	//$page = str_replace('<link rel="dns-prefetch" href="//cdn3.adexprt.com/">', '<link rel="dns-prefetch" href="//thepiratebay.se/">', $page);
+	//$page = str_replace('<link rel="dns-prefetch" href="//cdn3.adexprts.com/">', '<link rel="dns-prefetch" href="//anonymous.rs/">', $page);
+	//$page = str_replace('<link rel="dns-prefetch" href="//0427d7.se/">', '<link rel="dns-prefetch" href="//anonymous.rs/">', $page);
+	//$page = str_replace('<link rel="dns-prefetch" href="//syndication.exoclick.com/">', '<link rel="dns-prefetch" href="//thepiratebay.se/">', $page);
+	//$page = str_replace('<link rel="dns-prefetch" href="//main.exoclick.com/">', '<link rel="dns-prefetch" href="//anonymous.rs/">', $page);
+	//$page = str_replace('<link rel="dns-prefetch" href="//cdn.bitfalcon.tv/">', '<link rel="dns-prefetch" href="//thepiratebay.se/">', $page);
 	
 	//ADS
-	$page = str_replace("<body>", "<body>", $page);
-	$page = str_replace("</body>", "</body>", $page);
+	//$page = str_replace("<body>", "<body>", $page);
+	//$page = str_replace("</body>", "</body>", $page);
 	
 	//Switch view not yet supported
 	$page = str_replace("<a href=\"/switchview.php?view=s\">Single</a>", "<a href=\"#\" onClick=\"alert('This feature is not yet supported.')\">Single</a>", $page);

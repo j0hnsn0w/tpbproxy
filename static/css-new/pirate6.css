@@ -3,6 +3,7 @@ body { text-align: center; font-family: Verdana, Arial, Helvetica, sans-serif; f
 a { color: #009; text-decoration: none; border-bottom: 1px dotted #000; }
 a:hover{ text-decoration: none; border-bottom: 1px solid #009; }
 .img, .img:hover { border-bottom: 0; }
+#image {  border-bottom: 0; }
 #searchfield2 { display: block; width: 500px; margin: 0 auto 20px auto; text-align: center; padding: 0 0 0 10px; }
 .ad { float: right; margin-right: 0px; }
 .ad a { text-decoration: none; border: 0; }

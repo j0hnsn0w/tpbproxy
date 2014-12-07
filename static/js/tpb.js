@@ -9,3 +9,4 @@ function setAll()
 }
 
 function rmAll() { document.forms['q'].elements['all'].checked = false; }
+
